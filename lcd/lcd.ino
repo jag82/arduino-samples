@@ -1,3 +1,5 @@
+// not working: try soldering lcd screen for success!
+
 #include <LiquidCrystal.h> //LCD-Bibliothek laden
 
 // LiquidCrystal lcd(12, 11, 5, 4, 3, 2); //In dieser Zeile wird festgelegt, welche Pins des Mikrocontrollerboards für das LCD verwendet wird (Am besten erstmal nicht verändern).
