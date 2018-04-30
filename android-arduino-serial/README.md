@@ -7,3 +7,6 @@ https://github.com/jag82/android-serial
 
 Alternative library to investigate:
 https://github.com/mik3y/usb-serial-for-android
+
+It isn't working yet. For debugging:
+https://stackoverflow.com/questions/6163856/usb-device-attached-intent-not-firing?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa
