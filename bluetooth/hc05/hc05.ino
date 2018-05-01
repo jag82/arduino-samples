@@ -14,13 +14,14 @@ void setup() {
 void loop() {
 
    // We (Arduino) send a signal to Android
+   // open Serial Monitor (ctrl+shift+M) and enter arbitrary text via keyboard, click Send
    char c;  
    if (Serial.available()) {  
      c = Serial.read();        
      Serial.println(c);             // Write the character to the Serial Monitor  
      BTSerial.write (c);           // Write the character to Bluetooth  
    }  
-   BTSerial.write('z');
+//   BTSerial.write('z');
 
   // Android sends a signal to us (Arduino)
   if (BTSerial.available()) {
@@ -34,7 +35,7 @@ void loop() {
     }
   }
 
-  delay(500);
+//  delay(50);
 }
 
 
