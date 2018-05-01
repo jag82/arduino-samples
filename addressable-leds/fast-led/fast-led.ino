@@ -5,8 +5,8 @@
 
 CRGB leds[NUM_LEDS];
 
-int LEFT_PIN = 4;
-int RIGHT_PIN = 2;
+int LEFT_PIN = 13;
+int RIGHT_PIN = 12;
 
 int index = 86;
 float speed = 1.0df;

@@ -7,6 +7,8 @@
 * Library: TMRh20/RF24, https://github.com/tmrh20/RF24/
 */
 
+// for use with NRF 24L01 (which allows arduino-arduino comms, but doesn't seem to allow arduino-android easily)
+
 #include <SPI.h>
 #include <nRF24L01.h>
 #include <RF24.h>
