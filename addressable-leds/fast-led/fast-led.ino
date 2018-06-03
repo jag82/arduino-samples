@@ -8,24 +8,25 @@ CRGB leds[NUM_LEDS];
 int LEFT_PIN = 13;
 int RIGHT_PIN = 12;
 
-int index = 86;
+int index = 10;
 float speed = 1.0df;
 int MAX_BRIGHT = 50;
 int brightness = 255;
 int fadeRate = 10;
 
 void setup() {
-//  Serial.begin(9600);
+//  delay(3000);
+  Serial.begin(9600);
   FastLED.addLeds<WS2811, DATA_PIN, BRG>(leds, NUM_LEDS);
   pinMode(LEFT_PIN, INPUT);
-  pinMode(RIGHT_PIN, OUTPUT);
+  pinMode(RIGHT_PIN, INPUT);
 }
  
 
 void loop() { 
   int left = digitalRead(LEFT_PIN);
   int right = digitalRead(RIGHT_PIN);
-
+  
   if(left && !right) {
     if(index > 0) {
       index--;      
