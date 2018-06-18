@@ -10,7 +10,7 @@
 // 11 -> RX
 
 // HC06 red light flashes fast when: ?
-// 
+// 2 flashes, long pause = can send/receive
 
 #include <SoftwareSerial.h>
 
@@ -55,20 +55,20 @@ void loop() {
 
   // Android sends a signal to us (Arduino)
   if (BTSerial.available()) {
-//  Serial.println("btserial available");
     char in = BTSerial.read();
-    if(in == '0') {
-      function0();
-    }
-    if(in == '1') {
-      function1();
-    }
     dataReceived += in;
+
     Serial.println(dataReceived);
+  //   Serial.println("btserial available");
+  //   char in = BTSerial.read();
+  //   if(in == '0') {
+  //     function0();
+  //   }
+  //   if(in == '1') {
+  //     function1();
+  //   }
   }
 
 //  delay(50);
 }
-
-
 
