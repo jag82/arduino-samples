@@ -11,16 +11,21 @@ void setup() {
   Serial.println("setup");
   FastLED.addLeds<WS2811, 5, BRG>(leds[0], NUM_LEDS_PER_STRIP);
   FastLED.addLeds<WS2811, 6, BRG>(leds[1], NUM_LEDS_PER_STRIP);
-  FastLED.addLeds<WS2811, 7, BRG>(leds[1], NUM_LEDS_PER_STRIP);
-  FastLED.addLeds<WS2811, 8, BRG>(leds[1], NUM_LEDS_PER_STRIP);
-  FastLED.addLeds<WS2811, 9, BRG>(leds[1], NUM_LEDS_PER_STRIP);
-  FastLED.addLeds<WS2811, 10, BRG>(leds[1], NUM_LEDS_PER_STRIP);
+  FastLED.addLeds<WS2811, 7, BRG>(leds[2], NUM_LEDS_PER_STRIP);
+  FastLED.addLeds<WS2811, 8, BRG>(leds[3], NUM_LEDS_PER_STRIP);
+  FastLED.addLeds<WS2811, 9, BRG>(leds[4], NUM_LEDS_PER_STRIP);
+  FastLED.addLeds<WS2811, 10, BRG>(leds[5], NUM_LEDS_PER_STRIP);
 }
 
 
 void loop() {
   static int index = 10;
-  static CRGB color = CRGB::White;
+  static int hue = 0;
+  hue = hue + 1;
+  if(hue > 255) {
+    hue = 0;
+  }
+  CRGB color = CHSV(hue, 255, 255);
   FastLED.clear();
   for(int i = 0; i < NUM_STRIPS; i++) {
     leds[i][index] = color;
@@ -28,17 +33,6 @@ void loop() {
   }
   FastLED.show();
 
-  // if(digitalRead(LEFT0)) {
-  //   index--;
-  // }
-
-  // if(digitalRead(RIGHT0)) {
-  //   index++;
-  // }
-  
-  
-  
-  
   
   index++;
   if (index >= NUM_LEDS_PER_STRIP) {
@@ -48,7 +42,7 @@ void loop() {
     index = NUM_LEDS_PER_STRIP-1;
   }
 
-  FastLED.delay(60);
+  FastLED.delay(30);
 
 }
 
